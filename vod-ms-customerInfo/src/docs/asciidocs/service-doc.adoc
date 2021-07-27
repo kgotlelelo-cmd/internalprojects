@@ -1,0 +1,4 @@
+:toc: left
+= Vod Ms Sample
+
+include::api-guide.adoc[]

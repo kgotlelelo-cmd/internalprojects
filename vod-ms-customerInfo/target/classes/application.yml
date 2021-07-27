@@ -1,0 +1,141 @@
+spring:
+  application:
+    name: vod-ms-sample
+  zipkin:
+     baseUrl: http://vod-ms-zipkin-app/
+  sleuth:
+     sampler:
+        percentage: 1.0
+  cloud:
+      kubernetes:
+        reload:
+          enabled: true
+          strategy: restart_context
+
+management:
+  context-path: "/manage"
+
+server:
+  port: 8080
+feign:
+   hystrix:
+     enabled: false
+
+security:
+  oauth2:
+    client:
+      clientId: summerui
+      clientSecret: 5umm3r53cr3t
+      accessTokenUri: http://vod-ms-auth:8080/oauth/token
+      useCurrentUri: true
+      userAuthorizationUri: http://vod-ms-auth:8080/oauth/authorize
+      checkTokenUri: http://vod-ms-auth:8080/oauth/check_token
+      preEstablishedRedirectUri: http://vod-ms-auth:8080/login
+      scope: openid
+    resource:
+          jwt:
+            keyValue: |
+              -----BEGIN PUBLIC KEY-----
+              MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkj9pQOONWZWVjJFOigDf
+              2kxd5iurgdHyLLMWVNChSgnP9DQL92FyvLLpo7dYMcEX+w5JV+9It5fbk40f0zwl
+              NnoKrS4ShHmYe7SXyKD65c36Drx/7sGffen13ZzZc+ZxyJMu87oV9lTRYZQOkqSO
+              x76mONzGLMscpDpVEqiLZs87pgyTmjX57zsFltbUx6sc+rf59rrB6HJLdlRgs8NC
+              rMsm0wa2PbsDs1QcvnnDeuagSgr6Lw/LDWZuCS7VayYnhVWJezOtlGajxdKRNqgT
+              FQ4kM/xBocO9vJR2gaV+8WNDuYeBRjuka2Uv9ofWecFiiUuAX20cR5f5TePc7Ym/
+              fQIDAQAB
+              -----END PUBLIC KEY-----
+
+vodacom:
+  core:
+    swagger:
+      description: Vodacom Spring Boot Starter
+      enableadmin: false
+      authorizeUri:  http://qonl102zatcrh.vodacom.corp:6229/oauth/
+    audit:
+      enabled: false
+    security:
+      permitAllPathPatterns:
+        - /public-services/**
+
+logging:
+    level:
+      za.co.vodacom.ms: INFO
+
+service:
+    props:
+        applicationName : ${spring.application.name}
+        message: Hello ,Welcome to Vodacom Cloud
+        customerMessage: hello have a lovely day
+
+
+
+---
+spring:
+  profiles: prodcluster
+
+
+---
+spring:
+  profiles: devcluster
+
+logging:
+    level:
+      za.co.vodacom.ms: DEBUG
+
+security:
+  oauth2:
+    client:
+      accessTokenUri: http://vod-ms-auth:8080/oauth/token
+      useCurrentUri: true
+      userAuthorizationUri: http://vod-ms-auth:8080/oauth/authorize
+      preEstablishedRedirectUri: http://vod-ms-auth:8080/login
+    resource:
+          jwt:
+            keyValue: |
+              -----BEGIN PUBLIC KEY-----
+              MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmq9A/mM8B+gjfeyczxdj
+              e8Ai9BN1gr+chG0ragfBG1T4ANVeOzppJrYOqSlFPQQB0516G6DnMEl7mWXjNUR5
+              YYuSY/mBcs2TJVs53djA24V8VYSBZpd2J2UA/mT8aC28UkxBzXM9a99gP8J9Gefu
+              /kszWiU7pafWEGXgM83DtMVrGbz/v857/5xbtHDGy/OOK27jtDaRon0RAj90swHW
+              mqOKRmMNHJazInEXztcePEDz4BtaWBs8WvofvMmKMfEUutkTasj+EM9Rwh6XoD0Y
+              S79pgmVilaDA+lLxniqGc8KP7GpBMBkXCS7A7N3TYIVxUrA2Q5qKTi0HZ7JQgC+p
+              jQIDAQAB
+              -----END PUBLIC KEY-----
+
+---
+spring:
+  profiles: development
+  zipkin:
+    enabled: false
+  cloud:
+      kubernetes:
+        reload:
+          enabled: false
+
+logging:
+    level:
+      za.co.vodacom.ms: DEBUG
+
+vodacom:
+  core:
+
+security:
+  oauth2:
+    client:
+      clientId: restapi
+      clientSecret: a6653cr3t
+      accessTokenUri: https://myvodacomuat.secure.vodacom.co.za/cloud/auth/oauth/token
+      useCurrentUri: false
+      checkTokenUri: https://myvodacomuat.secure.vodacom.co.za/cloud/auth/oauth/check_token
+    resource:
+          jwt:
+            keyValue: |
+              -----BEGIN PUBLIC KEY-----
+              MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmq9A/mM8B+gjfeyczxdj
+              e8Ai9BN1gr+chG0ragfBG1T4ANVeOzppJrYOqSlFPQQB0516G6DnMEl7mWXjNUR5
+              YYuSY/mBcs2TJVs53djA24V8VYSBZpd2J2UA/mT8aC28UkxBzXM9a99gP8J9Gefu
+              /kszWiU7pafWEGXgM83DtMVrGbz/v857/5xbtHDGy/OOK27jtDaRon0RAj90swHW
+              mqOKRmMNHJazInEXztcePEDz4BtaWBs8WvofvMmKMfEUutkTasj+EM9Rwh6XoD0Y
+              S79pgmVilaDA+lLxniqGc8KP7GpBMBkXCS7A7N3TYIVxUrA2Q5qKTi0HZ7JQgC+p
+              jQIDAQAB
+              -----END PUBLIC KEY-----

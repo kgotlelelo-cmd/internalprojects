@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>za.co.vodacom.ms.customerInfo</groupId>
+    <artifactId>vod-ms-customerInfo</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>VodMscustomerInfo</name>
+
+    <parent>
+        <groupId>co.za.vodacom.ms</groupId>
+        <artifactId>vod-ms-starter</artifactId>
+        <version>1.0.38-RELEASE</version>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <teams>Cloud_Self_Service</teams>
+        <creator>Name of the creator of this project</creator>
+        <description>Please give your application a proper description so others know what its purpose is.</description>
+    </properties>
+
+    <dependencies>
+        <!--Things I added        -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-web</artifactId>-->
+<!--        </dependency>-->
+        <!-- The end        -->
+        <dependency>
+            <groupId>za.co.vodacom.ms</groupId>
+            <artifactId>vod-ms-core-spring</artifactId>
+            <version>2.0.6-RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>za.co.vodacom.ms.core</groupId>
+            <artifactId>vod-ms-core-logging</artifactId>
+            <version>1.0.30-RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>za.co.vodacom.ms.core</groupId>
+            <artifactId>vod-ms-core-auditing</artifactId>
+            <version>1.0.20-RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>co.za.vodacom.ms</groupId>
+            <artifactId>vod-ms-service-deps</artifactId>
+            <version>1.0.38-RELEASE</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.ws</groupId>
+            <artifactId>spring-ws-test</artifactId>
+            <version>2.2.4.RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>za.co.vodacom.ms.core</groupId>
+            <artifactId>vod-ms-core-validation</artifactId>
+            <version>1.0.7-RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.fabric8</groupId>
+            <artifactId>spring-cloud-starter-kubernetes</artifactId>
+            <version>0.1.6</version>
+        </dependency>
+    </dependencies>
+</project>

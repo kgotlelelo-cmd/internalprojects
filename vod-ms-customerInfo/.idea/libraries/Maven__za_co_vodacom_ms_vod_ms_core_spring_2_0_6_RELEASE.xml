@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: za.co.vodacom.ms:vod-ms-core-spring:2.0.6-RELEASE">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/za/co/vodacom/ms/vod-ms-core-spring/2.0.6-RELEASE/vod-ms-core-spring-2.0.6-RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/za/co/vodacom/ms/vod-ms-core-spring/2.0.6-RELEASE/vod-ms-core-spring-2.0.6-RELEASE-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/za/co/vodacom/ms/vod-ms-core-spring/2.0.6-RELEASE/vod-ms-core-spring-2.0.6-RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

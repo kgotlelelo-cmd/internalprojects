@@ -1,0 +1,4 @@
+[source,bash]
+----
+$ curl 'http://localhost:55150/public-services/tests/hello' -i -H 'Accept: application/json' -H 'Content-Type: application/json; charset=UTF-8'
+----

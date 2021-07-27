@@ -1,0 +1,19 @@
+{
+  "name": "vod-ms-aggregate-customerinfo",
+  "version": "1.0.0",
+  "description": "aggregate layer of the spring project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "kgotlelelo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "request": "^2.88.2",
+    "start-script": "^0.1.0",
+    "winston": "^3.3.3"
+  }
+}

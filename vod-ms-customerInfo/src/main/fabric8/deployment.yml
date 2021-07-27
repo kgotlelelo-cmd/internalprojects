@@ -1,0 +1,54 @@
+metadata:
+  annotations:
+    kubernetes.io/change-cause: ${project.version}
+  labels:
+    project: vod-ms-customerInfo
+    hystrix.enabled: true
+    hystrix.cluster: default
+    version: ${project.version}
+spec:
+  replicas: ${kubernetes.replica.count}
+  revisionHistoryLimit: 5
+  strategy:
+    rollingUpdate:
+      type: RollingUpdate
+      maxUnavailable: 50%
+      maxSurge: 30%
+  template:
+    metadata:
+      labels:
+        project: vod-ms-customerInfo
+        hystrix.enabled: true
+        hystrix.cluster: default
+        version: ${project.version}
+    spec:
+      volumes:
+          - name: varlog
+            emptyDir: {}
+      containers:
+      - image: vod-docker-ms.artifactory.vodacom.co.za/vod-ms-customerInfo:${project.version}
+        name : spring-boot
+        env:
+        - name: "SPRING_PROFILES_ACTIVE"
+          value: ${vod.spring.profile}
+        - name: "POD_NAME"
+          valueFrom:
+            fieldRef:
+              fieldPath: "metadata.name"
+        imagePullPolicy : Always
+        volumeMounts:
+          - name: varlog
+            mountPath: /var/log
+      - image: busybox
+        name: spring-log
+        args: [/bin/sh, -c, 'while test ! -f "/var/log/spring.log"; do echo "Waiting for logfile " ; sleep 1; done; tail -n+1 -F /var/log/spring.log ;']
+        resources:
+            limits:
+              cpu: 50m
+              memory: 50Mi
+            requests:
+              cpu: 50m
+              memory: 10Mi
+        volumeMounts:
+          - name: varlog
+            mountPath: /var/log

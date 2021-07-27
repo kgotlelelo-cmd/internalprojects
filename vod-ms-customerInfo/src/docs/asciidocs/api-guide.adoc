@@ -1,0 +1,10 @@
+:toc: left
+
+= Sample API
+
+=== GET Welcome from Vodacom Clould
+operation::sayHelloTest[]
+
+
+
+

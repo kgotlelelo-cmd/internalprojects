@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: za.co.vodacom.ms.core:vod-ms-core-auditing:1.0.20-RELEASE">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/za/co/vodacom/ms/core/vod-ms-core-auditing/1.0.20-RELEASE/vod-ms-core-auditing-1.0.20-RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/za/co/vodacom/ms/core/vod-ms-core-auditing/1.0.20-RELEASE/vod-ms-core-auditing-1.0.20-RELEASE-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/za/co/vodacom/ms/core/vod-ms-core-auditing/1.0.20-RELEASE/vod-ms-core-auditing-1.0.20-RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

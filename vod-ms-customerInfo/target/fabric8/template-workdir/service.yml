@@ -1,0 +1,12 @@
+metadata:
+  labels:
+    team: Cloud_Self_Service
+    project: vod-ms-customerInfo
+    hystrix.enabled: true
+    hystrix.cluster: default
+    version: ${project.version}
+spec:
+  type: ClusterIP
+  ports:
+      - port: 8080
+        targetPort: 8080
