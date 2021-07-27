@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @FeignClient(
         value = "vodacom-ms-customer",
-        url = "http://vod-ms-swagger-combined.qa.cloud.vodacom.corp/"
+        url = "${service.props.url}"
 )
 public interface customerClient {
     @RequestMapping(
             method = RequestMethod.GET,
-            value = "/vod-ms-customer/restricted-cluster-only-services/customers/{msisdn}/details"
+            value = "/customers/{msisdn}/details"
     )
     public Object getDetailsByMsisdn(@PathVariable("msisdn") Long msisdn);
 }

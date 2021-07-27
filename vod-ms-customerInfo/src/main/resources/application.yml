@@ -66,6 +66,7 @@ service:
         applicationName : ${spring.application.name}
         message: Hello ,Welcome to Vodacom Cloud
         customerMessage: hello have a lovely day
+        url: http://vod-ms-swagger-combined.qa.cloud.vodacom.corp/vod-ms-customer/restricted-cluster-only-services
 
 
 
