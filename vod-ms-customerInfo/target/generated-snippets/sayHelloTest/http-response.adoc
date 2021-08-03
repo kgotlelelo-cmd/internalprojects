@@ -1,23 +1,26 @@
 [source,http,options="nowrap"]
 ----
-HTTP/1.1 401 Unauthorized
+HTTP/1.1 200 OK
 Expires: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-Cache-Control: no-store
 X-XSS-Protection: 1; mode=block
 Pragma: no-cache
-Pragma: no-cache
 X-Frame-Options: DENY
-Date: Mon, 19 Jul 2021 12:05:48 GMT
+Date: Mon, 02 Aug 2021 08:36:32 GMT
 Connection: keep-alive
-WWW-Authenticate: Bearer realm="oauth2-resource", error="unauthorized", error_description="Full authentication is required to access this resource"
 X-Content-Type-Options: nosniff
-Transfer-Encoding: chunked
 Content-Type: application/json;charset=UTF-8
-Content-Length: 116
+Content-Length: 199
+X-Application-Context: vod-ms-sample:development:0
 
 {
-  "error" : "unauthorized",
-  "error_description" : "Full authentication is required to access this resource"
+  "messages" : [ ],
+  "result" : {
+    "message" : "Hello ,Welcome to Vodacom Cloud",
+    "customerMessage" : null,
+    "applicationName" : null
+  },
+  "successful" : false,
+  "code" : 0
 }
 ----

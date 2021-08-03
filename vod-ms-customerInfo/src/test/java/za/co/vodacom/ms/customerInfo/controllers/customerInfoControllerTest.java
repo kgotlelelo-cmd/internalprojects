@@ -60,4 +60,15 @@ public class customerInfoControllerTest extends VodMsRestAssuredTest {
             .and()
             .statusCode(200);
     }
+
+    @Test
+    public void getDetailsByMsisdn(){
+        given()
+                .when()
+                .get("public-services/tests/customer/0793070263")
+                .then()
+                .log().all()
+                .assertThat()
+                .statusCode(200);
+    }
 }

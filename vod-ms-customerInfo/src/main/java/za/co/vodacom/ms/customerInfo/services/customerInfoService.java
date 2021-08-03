@@ -16,18 +16,15 @@ public class customerInfoService {
     @Autowired
     ServiceProperties serviceProperties;
 
+    @Autowired
     customerClient customerClient;
 
-    public customerInfoService(customerClient customerClient){
-        this.customerClient = customerClient;
-    }
 
     public customerInfoModel sayHello() {
         return customerInfoModel.builder().message(serviceProperties.getMessage()).build() ;
     }
 
-    public Object getMsisdnDetails(Long msisdn){
+    public Object getMsisdnDetails(String msisdn){
         return customerClient.getDetailsByMsisdn(msisdn);
     }
-
 }

@@ -35,7 +35,7 @@ public class customerInfoController{
             value = "/customer/{msisdn}",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public Object getDetailsByMsisdn(@PathVariable("msisdn") Long msisdn){
+    public Object getDetailsByMsisdn(@PathVariable("msisdn") String msisdn){
         return service.getMsisdnDetails(msisdn);
     }
 }

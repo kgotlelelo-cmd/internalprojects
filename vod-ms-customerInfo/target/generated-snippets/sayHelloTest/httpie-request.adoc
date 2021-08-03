@@ -1,0 +1,4 @@
+[source,bash]
+----
+$ http GET 'http://localhost:64016/public-services/tests/hello' 'Accept:application/json' 'Content-Type:application/json; charset=UTF-8'
+----
