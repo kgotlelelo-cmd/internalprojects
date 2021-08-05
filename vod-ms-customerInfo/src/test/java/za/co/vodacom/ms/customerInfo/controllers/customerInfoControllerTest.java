@@ -61,11 +61,26 @@ public class customerInfoControllerTest extends VodMsRestAssuredTest {
             .statusCode(200);
     }
 
+
+    //Only works for prod url
+//    @Test
+//    public void getDetailsByMsisdn(){
+//        given()
+//                .when()
+//                .get("public-services/tests/customer/0793070263")
+//                .then()
+//                .log().all()
+//                .assertThat()
+//                .statusCode(200);
+//    }
+
+    //Only works for nonprod url check application.yml service.props
+
     @Test
     public void getDetailsByMsisdn(){
         given()
                 .when()
-                .get("public-services/tests/customer/0793070263")
+                .get("public-services/tests/customer/27630000455")
                 .then()
                 .log().all()
                 .assertThat()
