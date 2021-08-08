@@ -84,6 +84,19 @@ public class customerInfoControllerTest extends VodMsRestAssuredTest {
                 .then()
                 .log().all()
                 .assertThat()
+                .body("result.accountNumber",Matchers.is("1-53038487081"))
+                .and()
                 .statusCode(200);
     }
+
+//    @Test
+//    public void getDetailsByMsisdnBadRequest(){
+//        given()
+//                .when()
+//                .get("public-services/tests/customer/27630000499")
+//                .then()
+//                .log().all()
+//                .assertThat()
+//                .statusCode(500);
+//    }
 }
